@@ -17,7 +17,7 @@ define([], function() {
 
         this.rfs = window.requestFileSystem || webkitRequestFileSystem;
 
-        if (type === PERSISTENT || nstr(type) === "persistent") { this.type = PERSISTENT;
+        if (type === PERSISTENT || nstr(type) === "persistent") {
             this.type = PERSISTENT;
             this.storage = navigator.webkitPersistentStorage;
         } else if (type === TEMPORARY || nstr(type) === "temporary") {
@@ -123,7 +123,8 @@ define([], function() {
         createFile : function(name) {
             that._checkFs();
 
-            return new Promise(function(resolve, reject) { that.fs.root.getFile(name, {
+            return new Promise(function(resolve, reject) {
+                that.fs.root.getFile(name, {
                     create: true,
                     exclusive: true
                 }, function(fileEntry) {
